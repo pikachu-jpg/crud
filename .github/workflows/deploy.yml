@@ -1,0 +1,82 @@
+name: Rest-O Docker Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Build and Deploy Rest-O
+
+    runs-on: [self-hosted, windows, x64]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Check Docker
+        shell: powershell
+        run: |
+          docker --version
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Docker is not available."
+          }
+
+      - name: Build Rest-O Docker Image
+        shell: powershell
+        run: |
+          docker build -t resto-app:latest .
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Docker image build failed."
+          }
+
+      - name: Remove Existing Container
+        shell: powershell
+        run: |
+          $existing = docker ps -a --format "{{.Names}}"
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Could not check Docker containers."
+          }
+
+          if ($existing -contains "resto-app") {
+            docker rm -f resto-app
+
+            if ($LASTEXITCODE -ne 0) {
+              throw "Could not remove existing container."
+            }
+          }
+
+      - name: Start Rest-O Container
+        shell: powershell
+        run: |
+          docker run -d `
+            --name resto-app `
+            --restart unless-stopped `
+            -p 8080:80 `
+            resto-app:latest
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Could not start Rest-O container."
+          }
+
+      - name: Verify Deployment
+        shell: powershell
+        run: |
+          Start-Sleep -Seconds 5
+
+          docker ps --filter "name=resto-app"
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Could not verify deployment."
+          }
+
+          Write-Host "Rest-O deployment completed."
