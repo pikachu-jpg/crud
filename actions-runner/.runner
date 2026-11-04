@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "CLIENT",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus12.actions.githubusercontent.com/X6wgqtnuEFK4Hf6Blb7sfo01jnw2TF35tjzez8U68NS0m7uk9o/",
+  "gitHubUrl": "https://github.com/pikachu-jpg/crud",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
