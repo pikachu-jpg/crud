@@ -17,7 +17,7 @@
         <!-- Welcome Section -->
         <section class="welcome-section">
           <div>
-            <p class="eyebrow">uwi nako sir</p>
+            <p class="eyebrow">uwi nako sirr</p>
             <h1>Good food.<br /><span>Good mood.</span></h1>
             <p class="welcome-description">
               Manage your restaurant menu in one place.
