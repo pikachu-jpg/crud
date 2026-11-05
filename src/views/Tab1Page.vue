@@ -17,7 +17,7 @@
         <!-- Welcome Section -->
         <section class="welcome-section">
           <div>
-            <p class="eyebrow">hi sir!!!!</p>
+            <p class="eyebrow">hapon na</p>
             <h1>Good food.<br /><span>Good mood.</span></h1>
             <p class="welcome-description">
               Manage your restaurant menu in one place.
