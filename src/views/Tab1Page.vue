@@ -17,7 +17,7 @@
         <!-- Welcome Section -->
         <section class="welcome-section">
           <div>
-            <p class="eyebrow">WELCOME TO REST-O 3</p>
+            <p class="eyebrow">WELCOME TO REST-O 20</p>
             <h1>Good food.<br /><span>Good mood.</span></h1>
             <p class="welcome-description">
               Manage your restaurant menu in one place.
