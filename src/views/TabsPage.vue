@@ -10,12 +10,12 @@
 
         <ion-tab-button tab="2" href="/tabs/tab2">
           <ion-icon aria-hidden="true" :icon="ellipse" />
-          <ion-label> 2</ion-label>
+          <ion-label> 12</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="3" href="/tabs/tab3">
           <ion-icon aria-hidden="true" :icon="square" />
-          <ion-label>3</ion-label>
+          <ion-label>13</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
